@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog Post</title>
+    <link rel="stylesheet" href="styles/post.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">MyBlog</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="posts.html">Posts</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <h1 class="blog-title">Blog Post Title</h1>
+        <img class="blog-image" src="images/post1.jpg" alt="Post Image">
+        <div class="blog-content"></div>
+
+        <!-- Comments Section -->
+        <div class="comment-section">
+            
+            <div class="comment-header">
+                <h2>Comments</h2>
+                <!--<button id="clearCommentsButton" class="clear-button">Clear Comments</button> -->
+            </div>
+            
+
+            <form id="commentForm">
+                <input id="nameInput" type="text" placeholder="Your Name" required>
+                <textarea id="commentInput" placeholder="Your Comment" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="commentsList" class="comments-list">
+                <!-- Коментарі будуть додаватися сюди динамічно -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 MyBlog. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/post.js"></script>
+</body>
+</html>
