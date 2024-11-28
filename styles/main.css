@@ -1,0 +1,293 @@
+/* --- Загальні стилі --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #fff;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Темний градієнт фон */
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    margin: 0.5rem 0;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #ff4081; /* Яскравий акцент */
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #fbc02d;
+}
+
+/* --- Навігація --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+/* --- Hero секція --- */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ff4081, #7b1fa2);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    animation: gradientMove 10s infinite alternate ease-in-out;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+@keyframes gradientMove {
+    0% {
+        background: linear-gradient(135deg, #ff4081, #7b1fa2);
+    }
+    100% {
+        background: linear-gradient(135deg, #7b1fa2, #ff4081);
+    }
+}
+
+/* --- Карточки постів --- */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.post-card {
+    background: #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-card h3 {
+    margin: 1rem;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.post-card p {
+    margin: 0 1rem 1.5rem;
+    color: #ddd;
+}
+
+.post-card .read-more {
+    display: block;
+    text-align: center;
+    margin: 0 1rem 1.5rem;
+    padding: 0.5rem;
+    background: #ff4081;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.post-card .read-more:hover {
+    background: #fbc02d;
+    transform: scale(1.05);
+}
+
+/* --- Фон анімації --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 64, 129, 0.2), transparent 70%);
+    animation: pulse 5s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1a1a1a;
+    color: #fff;
+    margin-top: 2rem;
+    position: relative;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 5px;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    border-radius: 5px;
+}
+
+/* --- Додатковий стиль для модального вікна --- */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #292929;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 1001;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+    color: #ff4081;
+    margin: 0;
+}
+
+.modal-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fbc02d;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-header .close-btn:hover {
+    transform: scale(1.2);
+}
+
+.modal textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.modal button {
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 64, 129, 0.7);
+}
+
+/* --- Адаптивний дизайн --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .post-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .post-card img {
+        height: 150px;
+    }
+
+    .modal {
+        width: 90%;
+    }
+}

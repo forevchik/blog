@@ -1,0 +1,94 @@
+/* Основні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    margin: 0.5rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #fbc02d;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #292929;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1a1a1a;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 5px;
+    background: linear-gradient(90deg, #ff4081, #fbc02d);
+    border-radius: 5px;
+}
