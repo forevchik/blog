@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "How to Start Coding",
+        "description": "Learn the basics of coding and start your journey in tech.",
+        "image": "images/post1.jpg",
+        "category": "tech"
+    },
+    {
+        "id": 2,
+        "title": "Top 10 Web Design Trends",
+        "description": "From futuristic typography to interactive animations – discover the trends shaping web design in 2024!",
+        "image": "images/post2.png",
+        "category": "design"
+    }
+]
